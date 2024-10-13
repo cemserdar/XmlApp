@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>XML Dosyası Yükle</h2>
+
+<form asp-action="DeserializeXmlAsync" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label for="DeserializeXmlAsync">XML Dosyası</label>
+        <input type="file" class="form-control" name="DeserializeXmlAsync" />
+    </div>
+    <button type="submit" class="btn btn-primary">Yükle</button>
+</form>

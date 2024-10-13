@@ -1,0 +1,34 @@
+﻿namespace XmlApp.Models.Fields
+{
+    using System.Xml.Serialization;
+
+    public class GenelBilgiler
+    {
+        public string BelgeNo { get; set; }
+        public string SerbestBolgeAdi { get; set; }
+        public string KayitTarihi { get; set; }
+        public string DisReferansNo { get; set; }
+        public string GumrukId { get; set; }
+        public string FormDurumu { get; set; }
+        public string FirmaTicaretUnvani { get; set; }
+        public string FirmaFaaliyetRuhsatiNo { get; set; }
+        public string FirmaFaaliyetRuhsatiKonusu { get; set; }
+        public string DepoKullanimBelgeliFirma { get; set; }
+        public string DepoKullanimBelgeNo { get; set; }
+        public string FormuDolduraninAdi { get; set; }
+        public string FirmaTelefonu { get; set; }
+
+        [XmlElement("IslemYonuBilgileri")]
+        public IslemYonuBilgileri IslemYonuBilgileri { get; set; }
+
+        [XmlElement("IslemTuruBilgileri")]
+        public IslemTuruBilgileri IslemTuruBilgileri { get; set; }
+
+        [XmlElement("IslemKonusuBilgileri")]
+        public IslemKonusuBilgileri IslemKonusuBilgileri { get; set; }
+
+        [XmlElement("SevkiyatSekli")]
+        public SevkiyatSekli SevkiyatSekli { get; set; }
+    }
+
+}

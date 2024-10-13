@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-9"?>
+
+<SBIFBilgileri xsi:noNamespaceSchemaLocation="Sbif.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<GenelBilgiler>
+			<BelgeNo>205396</BelgeNo>
+			<SerbestBolgeAdi>Ege Serbest Bölgesi</SerbestBolgeAdi>
+			<KayitTarihi>20240930</KayitTarihi>
+			<DisReferansNo></DisReferansNo>
+			<GumrukId>24243082610961056851543</GumrukId>
+			<FormDurumu>Kapanmış</FormDurumu>
+			<FirmaTicaretUnvani>AMES DİSTO TEKSTİL SAN. VE TİC. A.Ş.</FirmaTicaretUnvani>
+			<FirmaFaaliyetRuhsatiNo>1136</FirmaFaaliyetRuhsatiNo>
+			<FirmaFaaliyetRuhsatiKonusu>ÜRETİM</FirmaFaaliyetRuhsatiKonusu>
+			<DepoKullanimBelgeliFirma></DepoKullanimBelgeliFirma>
+			<DepoKullanimBelgeNo>0</DepoKullanimBelgeNo>
+			<FormuDolduraninAdi>BİRKAN SALİM YURDAKUL</FormuDolduraninAdi>
+			<FirmaTelefonu></FirmaTelefonu>
+			<IslemYonuBilgileri>
+				<IslemYonu>Bölgeden Yurt Dışına Mal-Hizmet Çıkışı</IslemYonu>
+			</IslemYonuBilgileri>
+			<IslemTuruBilgileri>
+				<IslemTuru>Kesin Alış/Satış</IslemTuru>
+			</IslemTuruBilgileri>
+			<IslemKonusuBilgileri>
+				<IslemKonusu>Ticari</IslemKonusu>
+				<IslemKonusuTicari>Mal</IslemKonusuTicari>
+				<IslemKonusuTicariOlmayan></IslemKonusuTicariOlmayan>
+			</IslemKonusuBilgileri>
+			<SevkiyatSekli>
+				<SevkiyatSekliAdi>Hava Yolu</SevkiyatSekliAdi>
+			</SevkiyatSekli>
+		</GenelBilgiler>
+		<FaturaBilgileri>
+			<Fatura>
+				<FaturaTuru>Fatura</FaturaTuru>
+				<FaturaTarih>20240930</FaturaTarih>
+				<FaturaNo>A242024000000312</FaturaNo>
+				<TeslimAdresi>
+					<AdiTicaretUnvani>CENTROPIX GMBH</AdiTicaretUnvani>
+					<Adresi>INDUSTRIESTRASSE 8 6840 GÖTSİS AUSTRIA AVUSRIA</Adresi>
+					<PostaKodu>68000</PostaKodu>
+					<Ulke>Avusturya</Ulke>
+					<Il></Il>
+					<Ilce></Ilce>
+					<Telefon1></Telefon1>
+					<Telefon2></Telefon2>
+					<Telefon3></Telefon3>
+					<Faks1></Faks1>
+					<Faks2></Faks2>
+					<EPosta></EPosta>
+				</TeslimAdresi>
+				<KarsiFirmaBilgisi>
+					<VergiKimlikNo>2222222222</VergiKimlikNo>
+					<VergiDairesi>YURDIŞI</VergiDairesi>
+					<AdiUnvani>CENTROPIX GmbH</AdiUnvani>
+					<Adresi>INDUSTRIESTRASSE 8 6840 GÖTSİS AUSTRIA AVUSRIA</Adresi>
+					<PostaKodu>68000</PostaKodu>
+					<Ulke>Avusturya</Ulke>
+					<Il></Il>
+					<Ilce></Ilce>
+					<Telefon1></Telefon1>
+					<Telefon2></Telefon2>
+					<Telefon3></Telefon3>
+					<Faks1></Faks1>
+					<Faks2></Faks2>
+					<WebAdresi></WebAdresi>
+					<EPosta></EPosta>
+				</KarsiFirmaBilgisi>
+				<OdemeSekli>Mal Mukabili Ödeme</OdemeSekli>
+				<FaturaTeslimSekli>DAP</FaturaTeslimSekli>
+				<FaturaTutari>782.18</FaturaTutari>
+				<FaturaParaBirimi>EUR</FaturaParaBirimi>
+			</Fatura>
+		</FaturaBilgileri>
+		<MalKalemBilgileri>
+			<MalKalem>
+				<SiraNo>1</SiraNo>
+				<GumrukSiraNo>1</GumrukSiraNo>
+				<MalKalemId>4ipwukm1oplccq00</MalKalemId>
+				<ReferansFormTipi>UBF</ReferansFormTipi>
+				<ReferansFormNo>1754663</ReferansFormNo>
+				<ReferansFormYil>2024</ReferansFormYil>
+				<ReferansFormSiraNo>1</ReferansFormSiraNo>
+				<gtip>392113100000</gtip>
+				<Cins>AT EYER KILIF BÜYÜK</Cins>
+				<Mensei>Türkiye</Mensei>
+				<GeldigiGidecegiUlke>Avusturya</GeldigiGidecegiUlke>
+				<BirinciMiktar>22</BirinciMiktar>
+				<BirinciBirim>Adet</BirinciBirim>
+				<KapTuru>KAP</KapTuru>
+				<KapAdedi>1</KapAdedi>
+				<MalBedeli>782.18</MalBedeli>
+				<MalBedeliParaBirimi>EUR</MalBedeliParaBirimi>
+				<NavlunBedeli>0</NavlunBedeli>
+				<NavlunBedeliParaBirimi>USD</NavlunBedeliParaBirimi>
+				<SigortaBedeli>0</SigortaBedeli>
+				<SigortaBedeliParaBirimi>USD</SigortaBedeliParaBirimi>
+				<BrutAgirlik>14.5</BrutAgirlik>
+				<MalKalemTeslimSekli>DAP</MalKalemTeslimSekli>
+			</MalKalem>
+		<MalKalemUsdToplami>872.29</MalKalemUsdToplami>
+		</MalKalemBilgileri>
+		<TalepEdilenIsleticiHizmetleri>
+			<OrtakDepo>Yok</OrtakDepo>
+			<Kantar>Yok</Kantar>
+			<YuklemeBosaltma>Yok</YuklemeBosaltma>
+			<IsMakinasi>Yok</IsMakinasi>
+			<Ellecleme>Yok</Ellecleme>
+			<KoordinasyonHizmeti>Yok</KoordinasyonHizmeti>
+			<DigerTalepEdilenHizmetler></DigerTalepEdilenHizmetler>
+		</TalepEdilenIsleticiHizmetleri>
+		<SbifGumrukBilgileri>
+			<GumrukMudurluguOnayi>
+				<GumBeyannameNo>24TR35220000262962</GumBeyannameNo>
+				<GumTescilTarihi>20240930</GumTescilTarihi>
+				<GumTescilNo>24TR35220000262962</GumTescilNo>
+				<GumIslemiOnaylayaninAdiSoyadi>GUMRUK</GumIslemiOnaylayaninAdiSoyadi>
+			</GumrukMudurluguOnayi>
+			<GumrukMuhafazaMudurluguOnayi>
+				<GumMuhOnaylayanAdi></GumMuhOnaylayanAdi>
+				<GumMuhTescilNumarasi>24TR35220000262962</GumMuhTescilNumarasi>
+				<GumMuhTescilTarihi>20240930</GumMuhTescilTarihi>
+			</GumrukMuhafazaMudurluguOnayi>
+		</SbifGumrukBilgileri>
+	</SBIFBilgileri>
