@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "XML Yükle";
+}
+
+<h2>XML Yükle</h2>
+
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <label>XML Dosyası:</label>
+        <input type="file" name="xmlFile" accept=".xml" />
+        <button type="submit">Yükle</button>
+    </div>
+    @Html.ValidationSummary(true)
+}

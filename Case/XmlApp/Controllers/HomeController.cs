@@ -17,24 +17,41 @@ namespace XmlApp.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public IActionResult Index()
         {
-            using var reader = new StreamReader(Request.Body, Encoding.UTF8);
-            var xmlStr = await reader.ReadToEndAsync();
 
-            var sbifBilgileri = DeserializeXmlAsync(xmlStr);
+            return RedirectToAction("Upload");
+        }
+    
+        public IActionResult Upload()
+        {
             return View();
         }
-
-        public async Task<SBIFBilgileri> DeserializeXmlAsync(string xml)
+        [HttpPost]
+        public async Task<IActionResult> Upload(IFormFile xmlFile)
         {
-           
+            if (xmlFile != null && xmlFile.Length > 0)
+            {
+                using (var reader = new StreamReader(xmlFile.OpenReadStream(), Encoding.UTF8))
+                {
+                    var xmlStr = await reader.ReadToEndAsync();
+                    var sbifBilgileri = DeserializeXml(xmlStr);
+                    return View("Display", sbifBilgileri); 
+                }
+            }
+
+            ModelState.AddModelError("", "Lütfen bir XML dosyasý yükleyin.");
+            return View();
+        }
+        private SBIFBilgileri DeserializeXml(string xml)
+        {
             XmlSerializer serializer = new XmlSerializer(typeof(SBIFBilgileri));
-            using (var reader = new StreamReader(xml))
+            using (var reader = new StringReader(xml))
             {
                 return (SBIFBilgileri)serializer.Deserialize(reader);
             }
         }
+
 
         public IActionResult Privacy()
         {
