@@ -1,4 +1,8 @@
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
+using System.Data;
 using System.Diagnostics;
 using System.Reflection.PortableExecutable;
 using System.Text;
@@ -26,7 +30,7 @@ namespace XmlApp.Controllers
 
             return RedirectToAction("Upload");
         }
-    
+
         public IActionResult Upload()
         {
             return View();
@@ -35,15 +39,34 @@ namespace XmlApp.Controllers
         public async Task<IActionResult> Upload(IFormFile xmlFile)
         {
             CheckXmlValidations(xmlFile);
+
             if (xmlFile != null && xmlFile.Length > 0)
             {
                 using (var reader = new StreamReader(xmlFile.OpenReadStream(), Encoding.UTF8))
                 {
                     var xmlStr = await reader.ReadToEndAsync();
                     var sbifBilgileri = DeserializeXml(xmlStr);
-                    dataContext.Add(sbifBilgileri);
-                    dataContext.SaveChanges();
-                    return Ok("Baþarýlý"); 
+
+                    var sbifId = sbifBilgileri.Id;
+                    
+
+
+                    var existingRecord = dataContext.GenelBilgiler.FirstOrDefault(se => se.Id == sbifId);
+
+                    if (existingRecord == null)
+                    {
+
+                        dataContext.Add(sbifBilgileri);
+                        dataContext.SaveChanges();
+                        
+                    }
+                    else
+                    {
+                       
+                        throw new Exception($"Bu ID'ye sahip bir kayýt zaten var: {sbifId}");
+                    }
+
+                    //return RedirectToAction("OutputExcel", xmlFile);
                 }
             }
 
@@ -66,6 +89,78 @@ namespace XmlApp.Controllers
             if (!xmlFile.IsXml())
                 throw new Exception("Sadece xml uzantýlý dosyalarý yükleyebilirsiniz.");
         }
+
+       
+        public ActionResult OutputExcel()
+        {
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("SBIFBilgileri");
+                worksheet.Cell(1,1).Value = "BelgeNo";
+                worksheet.Cell(1, 2).Value = "DepoKullanimBelgeNo";
+
+                int RowCount = 2;
+                foreach (var item in dataContext.GenelBilgiler)
+                {
+                    worksheet.Cell(RowCount, 1).Value = item.BelgeNo;
+                    worksheet.Cell(RowCount,2).Value=item.DepoKullanimBelgeNo;
+                    RowCount++;
+                }
+
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    var content = stream.ToArray();
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "deneme.xlsx");
+                }
+
+            }
+        }
+
+        private FileResult GeneratedExcel(string fileName, IEnumerable<SBIFBilgileri> sbifBilgileri)
+        {
+            DataTable dataTable = new DataTable("SBIFBilgileri");
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("GenelBilgiler"),
+                new DataColumn("FaturaBilgileri"),
+                new DataColumn("MalKalemBilgileri"),
+                new DataColumn("TalepEdilenIsleticiHizmetleri"),
+                new DataColumn("SbifBilgiFisi")
+            });
+
+            foreach (var bilgi in sbifBilgileri)
+            {
+                dataTable.Rows.Add(bilgi.GenelBilgiler, bilgi.FaturaBilgileri, bilgi.MalKalemBilgileri, bilgi.TalepEdilenIsleticiHizmetleri, bilgi.SbifBilgiFisi);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable);
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.shhet", fileName);
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public IActionResult Privacy()
         {

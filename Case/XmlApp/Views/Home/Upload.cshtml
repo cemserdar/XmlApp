@@ -10,6 +10,31 @@
         <label>XML Dosyası:</label>
         <input type="file" name="xmlFile" accept=".xml" />
         <button type="submit">Yükle</button>
+
+
+
+    </div>
+
+
+    <div>
+        <label>Excel Dosyası:</label>
+
+        <a class="btn btn-primary" asp-action="OutputExcel" asp-controller="Home" asp-action="OutputExcel">İndir</a>
+
+    </div>
+
+
+    @Html.ValidationSummary(true)
+}
+
+@using (Html.BeginForm("OutputExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <label>Excel Dosyası:</label>
+          
+        <a class="btn btn-primary" asp-action="OutputExcel">İndir</a>
+        
     </div>
     @Html.ValidationSummary(true)
 }
+
