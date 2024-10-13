@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Case\\XmlApp\\",
+  "WorkspaceRootPath": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|d:\\case\\xmlapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|d:\\case\\xmlapp\\views\\home\\upload.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:views\\home\\upload.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\migrations\\20241013141156_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:migrations\\20241013141156_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|d:\\case\\xmlapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|d:\\case\\xmlapp\\models\\fields\\sbifbilgileri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:models\\fields\\sbifbilgileri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\models\\fields\\teslimadresi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:models\\fields\\teslimadresi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Upload.cshtml",
-              "DocumentMoniker": "D:\\Case\\XmlApp\\Views\\Home\\Upload.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Upload.cshtml",
-              "ToolTip": "D:\\Case\\XmlApp\\Views\\Home\\Upload.cshtml",
-              "RelativeToolTip": "Views\\Home\\Upload.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-13T10:18:51.396Z",
+              "Title": "20241013141156_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Migrations\\20241013141156_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241013141156_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Migrations\\20241013141156_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20241013141156_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T14:11:57.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TeslimAdresi.cs",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Models\\Fields\\TeslimAdresi.cs",
+              "RelativeDocumentMoniker": "Models\\Fields\\TeslimAdresi.cs",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Models\\Fields\\TeslimAdresi.cs",
+              "RelativeToolTip": "Models\\Fields\\TeslimAdresi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T14:06:05.56Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Case\\XmlApp\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Case\\XmlApp\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-13T09:59:46.553Z",
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Data\\DataContext.cs",
+              "RelativeToolTip": "Data\\DataContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T12:22:44.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Case\\XmlApp\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Case\\XmlApp\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAqwB0AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAA2wC0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T09:46:35.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SBIFBilgileri.cs",
-              "DocumentMoniker": "D:\\Case\\XmlApp\\Models\\Fields\\SBIFBilgileri.cs",
-              "RelativeDocumentMoniker": "Models\\Fields\\SBIFBilgileri.cs",
-              "ToolTip": "D:\\Case\\XmlApp\\Models\\Fields\\SBIFBilgileri.cs",
-              "RelativeToolTip": "Models\\Fields\\SBIFBilgileri.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T09:45:59.864Z",
               "EditorCaption": ""
             }
           ]
