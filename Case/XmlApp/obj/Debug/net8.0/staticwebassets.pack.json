@@ -5,12 +5,108 @@
       "PackagePath": "staticwebassets\\XmlApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\css\\OverlayScrollbars.min.css",
+      "PackagePath": "staticwebassets\\css\\OverlayScrollbars.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\css\\adminlte.min.css",
+      "PackagePath": "staticwebassets\\css\\adminlte.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\css\\adminlte.min.css.map",
+      "PackagePath": "staticwebassets\\css\\adminlte.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\css\\document\\bootstrap-4.min.css",
+      "PackagePath": "staticwebassets\\css\\document\\bootstrap-4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\css\\document\\dropzone.min.css",
+      "PackagePath": "staticwebassets\\css\\document\\dropzone.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\css\\fonts\\all.min.css",
+      "PackagePath": "staticwebassets\\css\\fonts\\all.min.css"
+    },
+    {
       "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\img\\AdminLTELogo.png",
+      "PackagePath": "staticwebassets\\img\\AdminLTELogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\img\\xml.png",
+      "PackagePath": "staticwebassets\\img\\xml.png"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\Chart.min.js",
+      "PackagePath": "staticwebassets\\js\\common\\Chart.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\adminlte.js",
+      "PackagePath": "staticwebassets\\js\\common\\adminlte.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\adminlte.js.map",
+      "PackagePath": "staticwebassets\\js\\common\\adminlte.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\common\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\js\\common\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\jquery.mapael.min.js",
+      "PackagePath": "staticwebassets\\js\\common\\jquery.mapael.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\common\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\jquery.min.map",
+      "PackagePath": "staticwebassets\\js\\common\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\jquery.mousewheel.js",
+      "PackagePath": "staticwebassets\\js\\common\\jquery.mousewheel.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\jquery.overlayScrollbars.min.js",
+      "PackagePath": "staticwebassets\\js\\common\\jquery.overlayScrollbars.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\raphael.min.js",
+      "PackagePath": "staticwebassets\\js\\common\\raphael.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\script.js",
+      "PackagePath": "staticwebassets\\js\\common\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\common\\usa_states.min.js",
+      "PackagePath": "staticwebassets\\js\\common\\usa_states.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\document\\Upload.js",
+      "PackagePath": "staticwebassets\\js\\document\\Upload.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\document\\dropzone.min.js",
+      "PackagePath": "staticwebassets\\js\\document\\dropzone.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\document\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\js\\document\\sweetalert2.min.js"
     },
     {
       "Id": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\site.js",
