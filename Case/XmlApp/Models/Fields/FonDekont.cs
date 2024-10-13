@@ -1,7 +1,10 @@
-﻿namespace XmlApp.Models.Fields
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace XmlApp.Models.Fields
 {
     public class FonDekont
     {
+        [Key]
         public string FonDekontDekontNo { get; set; }
         public string FonDekontTarih { get; set; }
         public decimal FonDekontTutar { get; set; }

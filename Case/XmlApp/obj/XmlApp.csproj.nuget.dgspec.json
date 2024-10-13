@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Case\\XmlApp\\XmlApp.csproj": {}
+    "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\XmlApp.csproj": {}
   },
   "projects": {
-    "D:\\Case\\XmlApp\\XmlApp.csproj": {
+    "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\XmlApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Case\\XmlApp\\XmlApp.csproj",
+        "projectUniqueName": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\XmlApp.csproj",
         "projectName": "XmlApp",
-        "projectPath": "D:\\Case\\XmlApp\\XmlApp.csproj",
+        "projectPath": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\XmlApp.csproj",
         "packagesPath": "C:\\Users\\Cem Serdar\\.nuget\\packages\\",
-        "outputPath": "D:\\Case\\XmlApp\\obj\\",
+        "outputPath": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cem Serdar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

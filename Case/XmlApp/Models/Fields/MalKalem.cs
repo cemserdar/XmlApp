@@ -1,4 +1,6 @@
-﻿namespace XmlApp.Models.Fields
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace XmlApp.Models.Fields
 {
     public class MalKalem
     {
@@ -21,6 +23,8 @@
         public string SigortaBedeliParaBirimi { get; set; }
         public decimal BrutAgirlik { get; set; }
         public string MalKalemTeslimSekli { get; set; }
+        [NotMapped]
+        public MalKalemBilgileri MalKalemBilgileri { get; set; }
     }
 
 }

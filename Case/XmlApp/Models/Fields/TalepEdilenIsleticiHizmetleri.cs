@@ -1,7 +1,11 @@
-﻿namespace XmlApp.Models.Fields
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace XmlApp.Models.Fields
 {
     public class TalepEdilenIsleticiHizmetleri
     {
+        [Key]
+        public int Id { get; set; }
         public string OrtakDepo { get; set; }
         public string Kantar { get; set; }
         public string YuklemeBosaltma { get; set; }

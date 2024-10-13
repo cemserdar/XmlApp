@@ -1,9 +1,13 @@
 ﻿namespace XmlApp.Models.Fields
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Xml.Serialization;
 
     public class GenelBilgiler
     {
+        [Key]
+        public int Id { get; set; }
         public string BelgeNo { get; set; }
         public string SerbestBolgeAdi { get; set; }
         public string KayitTarihi { get; set; }
@@ -19,15 +23,19 @@
         public string FirmaTelefonu { get; set; }
 
         [XmlElement("IslemYonuBilgileri")]
+        [NotMapped]
         public IslemYonuBilgileri IslemYonuBilgileri { get; set; }
 
         [XmlElement("IslemTuruBilgileri")]
+        [NotMapped]
         public IslemTuruBilgileri IslemTuruBilgileri { get; set; }
 
         [XmlElement("IslemKonusuBilgileri")]
+        [NotMapped]
         public IslemKonusuBilgileri IslemKonusuBilgileri { get; set; }
 
         [XmlElement("SevkiyatSekli")]
+        
         public SevkiyatSekli SevkiyatSekli { get; set; }
     }
 

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Xml.Serialization;
+using XmlApp.Data;
 using XmlApp.Models;
 using XmlApp.Models.Fields;
 
@@ -11,10 +12,12 @@ namespace XmlApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly DataContext dataContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, DataContext dataContext)
         {
             _logger = logger;
+            this.dataContext = dataContext;
         }
 
         public IActionResult Index()
@@ -36,6 +39,8 @@ namespace XmlApp.Controllers
                 {
                     var xmlStr = await reader.ReadToEndAsync();
                     var sbifBilgileri = DeserializeXml(xmlStr);
+                    dataContext.Add(sbifBilgileri);
+                    dataContext.SaveChanges();
                     return View("Display", sbifBilgileri); 
                 }
             }
