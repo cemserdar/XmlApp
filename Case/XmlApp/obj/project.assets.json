@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Case\\XmlApp\\XmlApp.csproj",
+      "projectUniqueName": "D:\\Case\\XmlApp\\XmlApp.csproj",
       "projectName": "XmlApp",
-      "projectPath": "E:\\Case\\XmlApp\\XmlApp.csproj",
+      "projectPath": "D:\\Case\\XmlApp\\XmlApp.csproj",
       "packagesPath": "C:\\Users\\Cem Serdar\\.nuget\\packages\\",
-      "outputPath": "E:\\Case\\XmlApp\\obj\\",
+      "outputPath": "D:\\Case\\XmlApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cem Serdar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -70,7 +70,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
