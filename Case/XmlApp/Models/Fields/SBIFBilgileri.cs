@@ -29,6 +29,7 @@
         public int? SbifBilgiFisiId { get; set; }
         [XmlElement("SbifGumrukBilgileri")]
         public SbifGumrukBilgileri SbifGumrukBilgileri { get; set; }
+
     }
 
 }

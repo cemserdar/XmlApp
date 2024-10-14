@@ -12,8 +12,8 @@ using XmlApp.Data;
 namespace XmlApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241013200348_first")]
-    partial class first
+    [Migration("20241014141406_firxt")]
+    partial class firxt
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -114,7 +114,14 @@ namespace XmlApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SBIFBilgileriId")
+                        .HasColumnType("int");
+
                     b.HasKey("FonDekontDekontNo");
+
+                    b.HasIndex("SBIFBilgileriId")
+                        .IsUnique()
+                        .HasFilter("[SBIFBilgileriId] IS NOT NULL");
 
                     b.ToTable("FonDekont");
                 });
@@ -171,6 +178,15 @@ namespace XmlApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("IslemKonusuBilgileriId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IslemTuruBilgileriId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IslemYonuBilgileriId")
+                        .HasColumnType("int");
+
                     b.Property<string>("KayitTarihi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -179,19 +195,84 @@ namespace XmlApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SevkiyatSekliAdi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("SevkiyatSekliId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SevkiyatSekliAdi");
+                    b.HasIndex("IslemKonusuBilgileriId");
+
+                    b.HasIndex("IslemTuruBilgileriId");
+
+                    b.HasIndex("IslemYonuBilgileriId");
+
+                    b.HasIndex("SevkiyatSekliId");
 
                     b.ToTable("GenelBilgiler");
                 });
 
+            modelBuilder.Entity("XmlApp.Models.Fields.GumrukMudurluguOnayi", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("GumBeyannameNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GumIslemiOnaylayaninAdiSoyadi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GumTescilNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GumTescilTarihi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("gumrukMudurluguOnayi");
+                });
+
+            modelBuilder.Entity("XmlApp.Models.Fields.GumrukMuhafazaMudurluguOnayi", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("GumMuhOnaylayanAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GumMuhTescilNumarasi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GumMuhTescilTarihi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("gumrukMuhafazaMudurluguOnayi");
+                });
+
             modelBuilder.Entity("XmlApp.Models.Fields.IslemKonusuBilgileri", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<string>("IslemKonusu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -204,23 +285,41 @@ namespace XmlApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.HasKey("Id");
+
                     b.ToTable("IslemKonusuBilgileri");
                 });
 
             modelBuilder.Entity("XmlApp.Models.Fields.IslemTuruBilgileri", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<string>("IslemTuru")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("IslemTuruBilgileri");
                 });
 
             modelBuilder.Entity("XmlApp.Models.Fields.IslemYonuBilgileri", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<string>("IslemYonu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("IslemYonuBilgileri");
                 });
@@ -245,6 +344,9 @@ namespace XmlApp.Migrations
                     b.Property<string>("Faks2")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Il")
                         .IsRequired()
@@ -314,9 +416,8 @@ namespace XmlApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("GumrukSiraNo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("GumrukSiraNo")
+                        .HasColumnType("int");
 
                     b.Property<int>("KapAdedi")
                         .HasColumnType("int");
@@ -350,6 +451,18 @@ namespace XmlApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ReferansFormNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ReferansFormSiraNo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReferansFormTipi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ReferansFormYil")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("SigortaBedeli")
                         .HasColumnType("decimal(18,2)");
 
@@ -357,9 +470,8 @@ namespace XmlApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SiraNo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SiraNo")
+                        .HasColumnType("int");
 
                     b.Property<string>("gtip")
                         .IsRequired()
@@ -405,7 +517,10 @@ namespace XmlApp.Migrations
                     b.Property<int>("MalKalemBilgileriId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SbifBilgiFisiId")
+                    b.Property<int?>("SbifBilgiFisiId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SbifGumrukBilgileriId")
                         .HasColumnType("int");
 
                     b.Property<int>("TalepEdilenIsleticiHizmetleriId")
@@ -421,6 +536,8 @@ namespace XmlApp.Migrations
 
                     b.HasIndex("SbifBilgiFisiId");
 
+                    b.HasIndex("SbifGumrukBilgileriId");
+
                     b.HasIndex("TalepEdilenIsleticiHizmetleriId");
 
                     b.ToTable("SBIFBilgileri");
@@ -435,7 +552,6 @@ namespace XmlApp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FonDekontDekontNo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -445,14 +561,44 @@ namespace XmlApp.Migrations
                     b.ToTable("SbifBilgiFisi");
                 });
 
+            modelBuilder.Entity("XmlApp.Models.Fields.SbifGumrukBilgileri", b =>
+                {
+                    b.Property<int>("SbifGumrukBilgileriId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SbifGumrukBilgileriId"));
+
+                    b.Property<int>("GumrukMudurluguOnayiId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GumrukMuhafazaMudurluguOnayiId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SbifGumrukBilgileriId");
+
+                    b.HasIndex("GumrukMudurluguOnayiId");
+
+                    b.HasIndex("GumrukMuhafazaMudurluguOnayiId");
+
+                    b.ToTable("sbifGumrukBilgileri");
+                });
+
             modelBuilder.Entity("XmlApp.Models.Fields.SevkiyatSekli", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<string>("SevkiyatSekliAdi")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("SevkiyatSekliAdi");
+                    b.HasKey("Id");
 
-                    b.ToTable("SevkiyatSekli", (string)null);
+                    b.ToTable("SevkiyatSekli");
                 });
 
             modelBuilder.Entity("XmlApp.Models.Fields.TalepEdilenIsleticiHizmetleri", b =>
@@ -578,13 +724,46 @@ namespace XmlApp.Migrations
                     b.Navigation("Fatura");
                 });
 
+            modelBuilder.Entity("XmlApp.Models.Fields.FonDekont", b =>
+                {
+                    b.HasOne("XmlApp.Models.Fields.SBIFBilgileri", "SBIFBilgileri")
+                        .WithOne("FonDekont")
+                        .HasForeignKey("XmlApp.Models.Fields.FonDekont", "SBIFBilgileriId");
+
+                    b.Navigation("SBIFBilgileri");
+                });
+
             modelBuilder.Entity("XmlApp.Models.Fields.GenelBilgiler", b =>
                 {
-                    b.HasOne("XmlApp.Models.Fields.SevkiyatSekli", "SevkiyatSekli")
+                    b.HasOne("XmlApp.Models.Fields.IslemKonusuBilgileri", "IslemKonusuBilgileri")
                         .WithMany()
-                        .HasForeignKey("SevkiyatSekliAdi")
+                        .HasForeignKey("IslemKonusuBilgileriId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("XmlApp.Models.Fields.IslemTuruBilgileri", "IslemTuruBilgileri")
+                        .WithMany()
+                        .HasForeignKey("IslemTuruBilgileriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("XmlApp.Models.Fields.IslemYonuBilgileri", "IslemYonuBilgileri")
+                        .WithMany()
+                        .HasForeignKey("IslemYonuBilgileriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("XmlApp.Models.Fields.SevkiyatSekli", "SevkiyatSekli")
+                        .WithMany()
+                        .HasForeignKey("SevkiyatSekliId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("IslemKonusuBilgileri");
+
+                    b.Navigation("IslemTuruBilgileri");
+
+                    b.Navigation("IslemYonuBilgileri");
 
                     b.Navigation("SevkiyatSekli");
                 });
@@ -618,9 +797,11 @@ namespace XmlApp.Migrations
 
                     b.HasOne("XmlApp.Models.Fields.SbifBilgiFisi", "SbifBilgiFisi")
                         .WithMany()
-                        .HasForeignKey("SbifBilgiFisiId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SbifBilgiFisiId");
+
+                    b.HasOne("XmlApp.Models.Fields.SbifGumrukBilgileri", "SbifGumrukBilgileri")
+                        .WithMany()
+                        .HasForeignKey("SbifGumrukBilgileriId");
 
                     b.HasOne("XmlApp.Models.Fields.TalepEdilenIsleticiHizmetleri", "TalepEdilenIsleticiHizmetleri")
                         .WithMany()
@@ -636,6 +817,8 @@ namespace XmlApp.Migrations
 
                     b.Navigation("SbifBilgiFisi");
 
+                    b.Navigation("SbifGumrukBilgileri");
+
                     b.Navigation("TalepEdilenIsleticiHizmetleri");
                 });
 
@@ -643,16 +826,39 @@ namespace XmlApp.Migrations
                 {
                     b.HasOne("XmlApp.Models.Fields.FonDekont", "FonDekont")
                         .WithMany()
-                        .HasForeignKey("FonDekontDekontNo")
+                        .HasForeignKey("FonDekontDekontNo");
+
+                    b.Navigation("FonDekont");
+                });
+
+            modelBuilder.Entity("XmlApp.Models.Fields.SbifGumrukBilgileri", b =>
+                {
+                    b.HasOne("XmlApp.Models.Fields.GumrukMudurluguOnayi", "GumrukMudurluguOnayi")
+                        .WithMany()
+                        .HasForeignKey("GumrukMudurluguOnayiId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("FonDekont");
+                    b.HasOne("XmlApp.Models.Fields.GumrukMuhafazaMudurluguOnayi", "GumrukMuhafazaMudurluguOnayi")
+                        .WithMany()
+                        .HasForeignKey("GumrukMuhafazaMudurluguOnayiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GumrukMudurluguOnayi");
+
+                    b.Navigation("GumrukMuhafazaMudurluguOnayi");
                 });
 
             modelBuilder.Entity("XmlApp.Models.Fields.MalKalemBilgileri", b =>
                 {
                     b.Navigation("MalKalem");
+                });
+
+            modelBuilder.Entity("XmlApp.Models.Fields.SBIFBilgileri", b =>
+                {
+                    b.Navigation("FonDekont")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

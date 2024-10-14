@@ -501,6 +501,9 @@ namespace XmlApp.Migrations
                     b.Property<int>("FaturaBilgileriId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FonDekontDekontNo")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("GenelBilgilerId")
                         .HasColumnType("int");
 
@@ -519,6 +522,8 @@ namespace XmlApp.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("FaturaBilgileriId");
+
+                    b.HasIndex("FonDekontDekontNo");
 
                     b.HasIndex("GenelBilgilerId");
 
@@ -542,7 +547,6 @@ namespace XmlApp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FonDekontDekontNo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -765,6 +769,10 @@ namespace XmlApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("XmlApp.Models.Fields.FonDekont", "FonDekont")
+                        .WithMany()
+                        .HasForeignKey("FonDekontDekontNo");
+
                     b.HasOne("XmlApp.Models.Fields.GenelBilgiler", "GenelBilgiler")
                         .WithMany()
                         .HasForeignKey("GenelBilgilerId")
@@ -793,6 +801,8 @@ namespace XmlApp.Migrations
 
                     b.Navigation("FaturaBilgileri");
 
+                    b.Navigation("FonDekont");
+
                     b.Navigation("GenelBilgiler");
 
                     b.Navigation("MalKalemBilgileri");
@@ -808,9 +818,7 @@ namespace XmlApp.Migrations
                 {
                     b.HasOne("XmlApp.Models.Fields.FonDekont", "FonDekont")
                         .WithMany()
-                        .HasForeignKey("FonDekontDekontNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FonDekontDekontNo");
 
                     b.Navigation("FonDekont");
                 });

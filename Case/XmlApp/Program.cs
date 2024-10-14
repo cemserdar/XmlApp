@@ -20,6 +20,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.Use(async (context, next) =>
+{
+    context.Response.ContentType = "text/html; charset=utf-8";
+    await next.Invoke();
+});
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
