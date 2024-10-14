@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using XmlApp.Data;
 
@@ -11,9 +12,11 @@ using XmlApp.Data;
 namespace XmlApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20241014090308_fiii")]
+    partial class fiii
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -507,10 +510,10 @@ namespace XmlApp.Migrations
                     b.Property<int>("MalKalemBilgileriId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SbifBilgiFisiId")
+                    b.Property<int>("SbifBilgiFisiId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SbifGumrukBilgileriId")
+                    b.Property<int>("SbifGumrukBilgileriId")
                         .HasColumnType("int");
 
                     b.Property<int>("TalepEdilenIsleticiHizmetleriId")
@@ -779,11 +782,15 @@ namespace XmlApp.Migrations
 
                     b.HasOne("XmlApp.Models.Fields.SbifBilgiFisi", "SbifBilgiFisi")
                         .WithMany()
-                        .HasForeignKey("SbifBilgiFisiId");
+                        .HasForeignKey("SbifBilgiFisiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("XmlApp.Models.Fields.SbifGumrukBilgileri", "SbifGumrukBilgileri")
                         .WithMany()
-                        .HasForeignKey("SbifGumrukBilgileriId");
+                        .HasForeignKey("SbifGumrukBilgileriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("XmlApp.Models.Fields.TalepEdilenIsleticiHizmetleri", "TalepEdilenIsleticiHizmetleri")
                         .WithMany()

@@ -23,15 +23,12 @@
         public string FirmaTelefonu { get; set; }
 
         [XmlElement("IslemYonuBilgileri")]
-        [NotMapped]
         public IslemYonuBilgileri IslemYonuBilgileri { get; set; }
 
         [XmlElement("IslemTuruBilgileri")]
-        [NotMapped]
         public IslemTuruBilgileri IslemTuruBilgileri { get; set; }
 
         [XmlElement("IslemKonusuBilgileri")]
-        [NotMapped]
         public IslemKonusuBilgileri IslemKonusuBilgileri { get; set; }
 
         [XmlElement("SevkiyatSekli")]
