@@ -36,24 +36,15 @@ namespace XmlApp.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Upload(IFormFile xmlFile)
+        public async Task<IActionResult> Upload(IFormFile file)
         {
-            CheckXmlValidations(xmlFile);
-            CheckDocument(xmlFile);
+            var reader = new StreamReader(file.OpenReadStream(), Encoding.UTF8);
 
-            //if (xmlFile != null && xmlFile.Length > 0)
-            //{
-            //    using (var reader = new StreamReader(xmlFile.OpenReadStream(), Encoding.UTF8))
-            //    {
-            //        var xmlStr = await reader.ReadToEndAsync();
-            //        var sbifBilgileri = DeserializeXml(xmlStr);
+            var xmlStr = reader.ReadToEnd();
+            var sbifBilgileri = DeserializeXml(xmlStr);
+            CheckXmlValidations(file);
+            CheckDocument(file);
 
-
-
-            //    }
-            //}
-
-            //ModelState.AddModelError("", "Lütfen bir XML dosyasý yükleyin.");
             return View();
         }
 
@@ -61,16 +52,11 @@ namespace XmlApp.Controllers
 
         public void CheckDocument(IFormFile file)
         {
-
             
                 var reader = new StreamReader(file.OpenReadStream(), Encoding.UTF8);
                 
                     var xmlStr = reader.ReadToEnd();
                     var sbifBilgileri = DeserializeXml(xmlStr);
-
-
-
-
 
             var karsýFirma = sbifBilgileri.FaturaBilgileri.Fatura.KarsiFirmaBilgisi.VergiKimlikNo;
             var sbifId = sbifBilgileri.Id;
