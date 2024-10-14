@@ -1,40 +1,95 @@
-﻿@{
-    ViewBag.Title = "XML Yükle";
+﻿<section class="content">
+    <div class="container-fluid">
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-default my-dropzone">
+                    <div class="card-header">
+                        <h3 class="card-title">İçeri Aktar | <small><em>Yüklemek istediğiniz dosyayı "Dosya Yükle" butonuna tıklayarak yükleyebilirsiniz</em></small></h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="actions" class="row">
+                            <div class="col-lg-6">
+                                <div class="btn-group w-100">
+                                    <span class="btn btn-success col fileinput-button">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Dosya Yükle</span>
+                                    </span>
+                                    <button type="submit" class="btn btn-primary col start">
+                                        <i class="fas fa-upload"></i>
+                                        <span>Yüklemeyi Başlat</span>
+                                    </button>
+                                    <button type="reset" class="btn btn-warning col cancel">
+                                        <i class="fas fa-times-circle"></i>
+                                        <span>Yüklemeyi İptal et</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="fileupload-process w-100">
+                                    <div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                        <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table table-striped files" id="previews">
+                            <div id="template" class="row mt-2">
+                                <div class="col-auto">
+                                    <span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <p class="mb-0">
+                                        <span class="lead" data-dz-name></span>
+                                        (<span data-dz-size></span>)
+                                    </p>
+                                    <strong class="error text-danger" data-dz-errormessage></strong>
+                                </div>
+                                <div class="col-4 d-flex align-items-center">
+                                    <div class="progress progress-striped active w-100" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                        <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                    </div>
+                                </div>
+                                <div class="col-auto d-flex align-items-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary start" type="submit">
+                                            @* <i type="file" name="xmlFile" accept=".xml"></i> *@
+                                            <input type="file" name="xmlFile" accept=".xml" />
+                                            <a class="btn-primary start" asp-controller="Home" asp-action="Upload">Başlat</a>
+                                        </button>
+                                        @* <input type="file" name="xmlFile" accept=".xml" />
+                                        <button type="submit">Yükle</button>
+                                     *@
+
+                                        <button data-dz-remove class="btn btn-warning cancel">
+                                            <i class="fas fa-times-circle"></i>
+                                            <span>İptal</span>
+                                        </button>
+                                        <button data-dz-remove class="btn btn-danger delete">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Sil</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        Yüklediğiniz dosyalar "Yüklenenler" sekmesinde gösterilecektir.
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </div><!--/. container-fluid -->
+</section>
+
+@section CustomScripts {
+    <link rel="stylesheet" href="~/css/document/dropzone.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/document/bootstrap-4.min.css">
+    <script src="~/js/document/dropzone.min.js"></script>
+    <script src="~/js/document/sweetalert2.min.js"></script>
+    <script src="~/js/document/Upload.js"></script>
 }
-
-<h2>XML Yükle</h2>
-
-@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <div>
-        <label>XML Dosyası:</label>
-        <input type="file" name="xmlFile" accept=".xml" />
-        <button type="submit">Yükle</button>
-
-
-
-    </div>
-
-
-    <div>
-        <label>Excel Dosyası:</label>
-
-        <a class="btn btn-primary" asp-action="OutputExcel" asp-controller="Home" asp-action="OutputExcel">İndir</a>
-
-    </div>
-
-
-    @Html.ValidationSummary(true)
-}
-
-@using (Html.BeginForm("OutputExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <div>
-        <label>Excel Dosyası:</label>
-          
-        <a class="btn btn-primary" asp-action="OutputExcel">İndir</a>
-        
-    </div>
-    @Html.ValidationSummary(true)
-}
-

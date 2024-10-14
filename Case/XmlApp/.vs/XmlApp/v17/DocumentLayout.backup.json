@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\migrations\\20241014090745_fiiii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:migrations\\20241014090745_fiiii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\views\\document\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:views\\document\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\wwwroot\\js\\document\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:wwwroot\\js\\document\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\models\\fields\\sbifbilgileri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:models\\fields\\sbifbilgileri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\views\\home\\upload.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:views\\home\\upload.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\controllers\\documentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:controllers\\documentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\migrations\\20241014090530_fii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:migrations\\20241014090530_fii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|c:\\users\\cem serdar\\desktop\\xmlapp\\wwwroot\\js\\document\\upload.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{89B3E5D1-67CA-4A81-8A28-32433B127A3F}|XmlApp.csproj|solutionrelative:wwwroot\\js\\document\\upload.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20241014090745_fiiii.cs",
-              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Migrations\\20241014090745_fiiii.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241014090745_fiiii.cs",
-              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Migrations\\20241014090745_fiiii.cs",
-              "RelativeToolTip": "Migrations\\20241014090745_fiiii.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:07:46.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20241014090530_fii.cs",
-              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Migrations\\20241014090530_fii.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241014090530_fii.cs",
-              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Migrations\\20241014090530_fii.cs",
-              "RelativeToolTip": "Migrations\\20241014090530_fii.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:05:31.66Z",
+              "DocumentIndex": 1,
+              "Title": "Index.js",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\document\\Index.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\document\\Index.js",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\document\\Index.js",
+              "RelativeToolTip": "wwwroot\\js\\document\\Index.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-14T11:25:07.487Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SBIFBilgileri.cs",
-              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Models\\Fields\\SBIFBilgileri.cs",
-              "RelativeDocumentMoniker": "Models\\Fields\\SBIFBilgileri.cs",
-              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Models\\Fields\\SBIFBilgileri.cs",
-              "RelativeToolTip": "Models\\Fields\\SBIFBilgileri.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:04:38.959Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Data\\DataContext.cs",
-              "RelativeToolTip": "Data\\DataContext.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAIwEYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T12:22:44.873Z",
+              "Title": "Upload.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Views\\Home\\Upload.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Upload.cshtml",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Views\\Home\\Upload.cshtml",
+              "RelativeToolTip": "Views\\Home\\Upload.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-14T10:30:42.959Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "DocumentController.cs",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Controllers\\DocumentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocumentController.cs",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Controllers\\DocumentController.cs",
+              "RelativeToolTip": "Controllers\\DocumentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T11:07:46.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Views\\Document\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Document\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Views\\Document\\Index.cshtml",
+              "RelativeToolTip": "Views\\Document\\Index.cshtml",
+              "ViewState": "AgIAALUBAAAAAAAAAAAAANQBAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-14T11:07:01.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-14T11:06:11.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Upload.js",
+              "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\document\\Upload.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\document\\Upload.js",
+              "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\wwwroot\\js\\document\\Upload.js",
+              "RelativeToolTip": "wwwroot\\js\\document\\Upload.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-14T10:37:20.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Cem Serdar\\Desktop\\XmlApp\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAAAIsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAQwH4AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T09:46:35.944Z",
+              "WhenOpened": "2024-10-14T10:13:59.327Z",
               "EditorCaption": ""
             }
           ]
