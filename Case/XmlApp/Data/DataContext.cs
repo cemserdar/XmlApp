@@ -24,6 +24,11 @@ namespace XmlApp.Data
         public DbSet<IslemKonusuBilgileri> IslemKonusuBilgileri { get; set; }
         public DbSet<IslemTuruBilgileri> IslemTuruBilgileri { get; set; }
         public DbSet<IslemYonuBilgileri> IslemYonuBilgileri { get; set; }
+        public DbSet<GumrukMudurluguOnayi> gumrukMudurluguOnayi { get; set; }
+        public DbSet<GumrukMuhafazaMudurluguOnayi> gumrukMuhafazaMudurluguOnayi { get; set; }
+        public DbSet<SbifGumrukBilgileri> sbifGumrukBilgileri { get; set; }
+
+
 
 
 
@@ -44,38 +49,33 @@ namespace XmlApp.Data
             modelBuilder.Entity<SBIFBilgileri>()
                 .HasOne(s => s.SbifBilgiFisi);
 
-            modelBuilder.Entity<IslemKonusuBilgileri>()
-                .HasNoKey();
-            modelBuilder.Entity<IslemTuruBilgileri>()
-               .HasNoKey();
-            modelBuilder.Entity<IslemYonuBilgileri>()
-                .HasNoKey();
+            modelBuilder.Entity<SBIFBilgileri>()
+               .HasOne(s => s.SbifGumrukBilgileri);
+
+
 
             modelBuilder.Entity<KarsiFirmaBilgisi>(entity =>
             {
                 entity.HasKey(e => e.AdiUnvani);
-
                 entity.ToTable("KarsiFirmaBilgileri");
-
-
             });
 
-            modelBuilder.Entity<SevkiyatSekli>(entity =>
-            {
-                entity.HasKey(e => e.SevkiyatSekliAdi);
-
-                entity.ToTable("SevkiyatSekli");
-
-
-            });
             modelBuilder.Entity<TeslimAdresi>(entity =>
             {
                 entity.HasKey(e => e.AdiTicaretUnvani);
 
                 entity.ToTable("TeslimAdresi");
 
-
             });
+            modelBuilder.Entity<SBIFBilgileri>()
+       .HasOne(s => s.SbifBilgiFisi)
+       .WithMany()
+       .HasForeignKey(s => s.SbifBilgiFisiId);
+
+            modelBuilder.Entity<SBIFBilgileri>()
+                    .HasOne(s => s.SbifGumrukBilgileri)
+                    .WithMany()
+                    .HasForeignKey(s => s.SbifGumrukBilgileriId);
         }
     }
 }

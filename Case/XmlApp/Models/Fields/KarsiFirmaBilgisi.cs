@@ -1,7 +1,11 @@
-﻿namespace XmlApp.Models.Fields
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace XmlApp.Models.Fields
 {
     public class KarsiFirmaBilgisi
     {
+        [Key]
+        public long Id { get; set; }
         public string VergiKimlikNo { get; set; }
         public string VergiDairesi { get; set; }
         public string AdiUnvani { get; set; }

@@ -1,12 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace XmlApp.Models.Fields
 {
     public class MalKalem
     {
-        public string SiraNo { get; set; }
-        public string GumrukSiraNo { get; set; }
+        [Key]
         public string MalKalemId { get; set; }
+        public int SiraNo { get; set; }
+        public int GumrukSiraNo { get; set; }
+        public string? ReferansFormTipi { get; set; }
+        public string? ReferansFormNo { get; set; }
+        public int ReferansFormYil { get; set; }
+        public int ReferansFormSiraNo { get; set; }
         public string gtip { get; set; }
         public string Cins { get; set; }
         public string Mensei { get; set; }

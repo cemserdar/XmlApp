@@ -39,40 +39,82 @@ namespace XmlApp.Controllers
         public async Task<IActionResult> Upload(IFormFile xmlFile)
         {
             CheckXmlValidations(xmlFile);
+            CheckDocument(xmlFile);
 
-            if (xmlFile != null && xmlFile.Length > 0)
-            {
-                using (var reader = new StreamReader(xmlFile.OpenReadStream(), Encoding.UTF8))
-                {
-                    var xmlStr = await reader.ReadToEndAsync();
-                    var sbifBilgileri = DeserializeXml(xmlStr);
-
-                    var sbifId = sbifBilgileri.Id;
-                    
+            //if (xmlFile != null && xmlFile.Length > 0)
+            //{
+            //    using (var reader = new StreamReader(xmlFile.OpenReadStream(), Encoding.UTF8))
+            //    {
+            //        var xmlStr = await reader.ReadToEndAsync();
+            //        var sbifBilgileri = DeserializeXml(xmlStr);
 
 
-                    var existingRecord = dataContext.GenelBilgiler.FirstOrDefault(se => se.Id == sbifId);
 
-                    if (existingRecord == null)
-                    {
+            //    }
+            //}
 
-                        dataContext.Add(sbifBilgileri);
-                        dataContext.SaveChanges();
-                        
-                    }
-                    else
-                    {
-                       
-                        throw new Exception($"Bu ID'ye sahip bir kayýt zaten var: {sbifId}");
-                    }
-
-                    //return RedirectToAction("OutputExcel", xmlFile);
-                }
-            }
-
-            ModelState.AddModelError("", "Lütfen bir XML dosyasý yükleyin.");
+            //ModelState.AddModelError("", "Lütfen bir XML dosyasý yükleyin.");
             return View();
         }
+
+
+
+        public void CheckDocument(IFormFile file)
+        {
+
+            
+                var reader = new StreamReader(file.OpenReadStream(), Encoding.UTF8);
+                
+                    var xmlStr = reader.ReadToEnd();
+                    var sbifBilgileri = DeserializeXml(xmlStr);
+
+
+
+
+
+            var karsýFirma = sbifBilgileri.FaturaBilgileri.Fatura.KarsiFirmaBilgisi.VergiKimlikNo;
+            var sbifId = sbifBilgileri.Id;
+            var genelBilgiId = sbifBilgileri.GenelBilgiler.Id;
+            var faturaId = sbifBilgileri.FaturaBilgileri.Id;
+            var malkalemBilgiId = sbifBilgileri.MalKalemBilgileri.Id;
+
+
+            var existingRecord = dataContext.SBIFBilgileri.FirstOrDefault(se => se.Id == sbifId);
+            var existingRecordGenelBilgi = dataContext.GenelBilgiler.FirstOrDefault(s => s.Id == genelBilgiId);
+            var existingRecordFaturaId = dataContext.FaturaBilgileri.FirstOrDefault(f => f.Id == faturaId);
+            var existingRecordMalkalemId = dataContext.MalKalemBilgileri.FirstOrDefault(mk => mk.Id == malkalemBilgiId);
+            var exisitngRecordKarsiFirma = dataContext.KarsiFirmaBilgileri.FirstOrDefault(kfb => kfb.VergiKimlikNo == karsýFirma);
+
+
+            if (existingRecord == null && existingRecordGenelBilgi == null && existingRecordFaturaId == null && existingRecordMalkalemId == null && exisitngRecordKarsiFirma ==null)
+            {
+                dataContext.Add(sbifBilgileri);
+                dataContext.SaveChanges();
+
+            }
+            else if (existingRecord != null)
+            {
+                throw new Exception($"Bu ID'ye sahip bir kayýt zaten var: {sbifId}");
+            }
+            else if (existingRecordGenelBilgi != null)
+            {
+                throw new Exception($"Bu ID'ye sahip bir kayýt zaten var: {genelBilgiId}");
+            }
+            else if (existingRecordFaturaId != null)
+            {
+                throw new Exception($"Bu ID'ye sahip bir kayýt zaten var: {faturaId}");
+            }
+            else if (existingRecordMalkalemId != null)
+            {
+                throw new Exception($"Bu ID'ye sahip bir kayýt zaten var: {malkalemBilgiId}");
+            }
+            else if (exisitngRecordKarsiFirma != null)
+            {
+                throw new Exception($"Bu ID'ye sahip bir kayýt zaten var: {karsýFirma}");
+            }
+
+        }
+
         private SBIFBilgileri DeserializeXml(string xml)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(SBIFBilgileri));
@@ -90,20 +132,20 @@ namespace XmlApp.Controllers
                 throw new Exception("Sadece xml uzantýlý dosyalarý yükleyebilirsiniz.");
         }
 
-       
+
         public ActionResult OutputExcel()
         {
             using (var workbook = new XLWorkbook())
             {
                 var worksheet = workbook.Worksheets.Add("SBIFBilgileri");
-                worksheet.Cell(1,1).Value = "BelgeNo";
+                worksheet.Cell(1, 1).Value = "BelgeNo";
                 worksheet.Cell(1, 2).Value = "DepoKullanimBelgeNo";
 
                 int RowCount = 2;
                 foreach (var item in dataContext.GenelBilgiler)
                 {
                     worksheet.Cell(RowCount, 1).Value = item.BelgeNo;
-                    worksheet.Cell(RowCount,2).Value=item.DepoKullanimBelgeNo;
+                    worksheet.Cell(RowCount, 2).Value = item.DepoKullanimBelgeNo;
                     RowCount++;
                 }
 
@@ -117,50 +159,37 @@ namespace XmlApp.Controllers
             }
         }
 
-        private FileResult GeneratedExcel(string fileName, IEnumerable<SBIFBilgileri> sbifBilgileri)
-        {
-            DataTable dataTable = new DataTable("SBIFBilgileri");
-            dataTable.Columns.AddRange(new DataColumn[]
-            {
-                new DataColumn("GenelBilgiler"),
-                new DataColumn("FaturaBilgileri"),
-                new DataColumn("MalKalemBilgileri"),
-                new DataColumn("TalepEdilenIsleticiHizmetleri"),
-                new DataColumn("SbifBilgiFisi")
-            });
+        //private FileResult GeneratedExcel(string fileName, IEnumerable<SBIFBilgileri> sbifBilgileri)
+        //{
+        //    DataTable dataTable = new DataTable("SBIFBilgileri");
+        //    dataTable.Columns.AddRange(new DataColumn[]
+        //    {
+        //        new DataColumn("GenelBilgiler"),
+        //        new DataColumn("FaturaBilgileri"),
+        //        new DataColumn("MalKalemBilgileri"),
+        //        new DataColumn("TalepEdilenIsleticiHizmetleri"),
+        //        new DataColumn("SbifBilgiFisi")
+        //    });
 
-            foreach (var bilgi in sbifBilgileri)
-            {
-                dataTable.Rows.Add(bilgi.GenelBilgiler, bilgi.FaturaBilgileri, bilgi.MalKalemBilgileri, bilgi.TalepEdilenIsleticiHizmetleri, bilgi.SbifBilgiFisi);
-            }
+        //    foreach (var bilgi in sbifBilgileri)
+        //    {
+        //        dataTable.Rows.Add(bilgi.GenelBilgiler, bilgi.FaturaBilgileri, bilgi.MalKalemBilgileri, bilgi.TalepEdilenIsleticiHizmetleri, bilgi.SbifBilgiFisi);
+        //    }
 
-            using (XLWorkbook wb = new XLWorkbook())
-            {
-                wb.Worksheets.Add(dataTable);
+        //    using (XLWorkbook wb = new XLWorkbook())
+        //    {
+        //        wb.Worksheets.Add(dataTable);
 
-                using (MemoryStream stream = new MemoryStream())
-                {
-                    wb.SaveAs(stream);
+        //        using (MemoryStream stream = new MemoryStream())
+        //        {
+        //            wb.SaveAs(stream);
 
-                    return File(stream.ToArray(),
-                        "application/vnd.openxmlformats-officedocument.spreadsheetml.shhet", fileName);
-                }
-            }
+        //            return File(stream.ToArray(),
+        //                "application/vnd.openxmlformats-officedocument.spreadsheetml.shhet", fileName);
+        //        }
+        //    }
 
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //}
 
         public IActionResult Privacy()
         {

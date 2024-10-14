@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using XmlApp.Data;
 
@@ -11,9 +12,11 @@ using XmlApp.Data;
 namespace XmlApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20241014090530_fii")]
+    partial class fii
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -507,7 +510,7 @@ namespace XmlApp.Migrations
                     b.Property<int>("MalKalemBilgileriId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SbifBilgiFisiId")
+                    b.Property<int>("SbifBilgiFisiId")
                         .HasColumnType("int");
 
                     b.Property<int?>("SbifGumrukBilgileriId")
@@ -779,7 +782,9 @@ namespace XmlApp.Migrations
 
                     b.HasOne("XmlApp.Models.Fields.SbifBilgiFisi", "SbifBilgiFisi")
                         .WithMany()
-                        .HasForeignKey("SbifBilgiFisiId");
+                        .HasForeignKey("SbifBilgiFisiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("XmlApp.Models.Fields.SbifGumrukBilgileri", "SbifGumrukBilgileri")
                         .WithMany()
