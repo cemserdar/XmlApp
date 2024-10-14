@@ -12,8 +12,8 @@ using XmlApp.Data;
 namespace XmlApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241014090745_fiiii")]
-    partial class fiiii
+    [Migration("20241014141625_firrtyr")]
+    partial class firrtyr
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -114,7 +114,14 @@ namespace XmlApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SBIFBilgileriId")
+                        .HasColumnType("int");
+
                     b.HasKey("FonDekontDekontNo");
+
+                    b.HasIndex("SBIFBilgileriId")
+                        .IsUnique()
+                        .HasFilter("[SBIFBilgileriId] IS NOT NULL");
 
                     b.ToTable("FonDekont");
                 });
@@ -545,7 +552,6 @@ namespace XmlApp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FonDekontDekontNo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -718,6 +724,15 @@ namespace XmlApp.Migrations
                     b.Navigation("Fatura");
                 });
 
+            modelBuilder.Entity("XmlApp.Models.Fields.FonDekont", b =>
+                {
+                    b.HasOne("XmlApp.Models.Fields.SBIFBilgileri", "SBIFBilgileri")
+                        .WithOne("FonDekont")
+                        .HasForeignKey("XmlApp.Models.Fields.FonDekont", "SBIFBilgileriId");
+
+                    b.Navigation("SBIFBilgileri");
+                });
+
             modelBuilder.Entity("XmlApp.Models.Fields.GenelBilgiler", b =>
                 {
                     b.HasOne("XmlApp.Models.Fields.IslemKonusuBilgileri", "IslemKonusuBilgileri")
@@ -811,9 +826,7 @@ namespace XmlApp.Migrations
                 {
                     b.HasOne("XmlApp.Models.Fields.FonDekont", "FonDekont")
                         .WithMany()
-                        .HasForeignKey("FonDekontDekontNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FonDekontDekontNo");
 
                     b.Navigation("FonDekont");
                 });
@@ -840,6 +853,12 @@ namespace XmlApp.Migrations
             modelBuilder.Entity("XmlApp.Models.Fields.MalKalemBilgileri", b =>
                 {
                     b.Navigation("MalKalem");
+                });
+
+            modelBuilder.Entity("XmlApp.Models.Fields.SBIFBilgileri", b =>
+                {
+                    b.Navigation("FonDekont")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

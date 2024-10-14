@@ -12,6 +12,7 @@ namespace XmlApp.Models.Fields
         public decimal FonDekontKullanilan { get; set; }
         public string FonDekontKullanilanPB { get; set; }
         public decimal FonDekontKullanilanDolar { get; set; }
+      
     }
 
 }

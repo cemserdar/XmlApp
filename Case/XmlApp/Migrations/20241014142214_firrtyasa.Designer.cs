@@ -12,8 +12,8 @@ using XmlApp.Data;
 namespace XmlApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241014090530_fii")]
-    partial class fii
+    [Migration("20241014142214_firrtyasa")]
+    partial class firrtyasa
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -504,13 +504,16 @@ namespace XmlApp.Migrations
                     b.Property<int>("FaturaBilgileriId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FonDekontDekontNo")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("GenelBilgilerId")
                         .HasColumnType("int");
 
                     b.Property<int>("MalKalemBilgileriId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SbifBilgiFisiId")
+                    b.Property<int?>("SbifBilgiFisiId")
                         .HasColumnType("int");
 
                     b.Property<int?>("SbifGumrukBilgileriId")
@@ -522,6 +525,8 @@ namespace XmlApp.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("FaturaBilgileriId");
+
+                    b.HasIndex("FonDekontDekontNo");
 
                     b.HasIndex("GenelBilgilerId");
 
@@ -545,7 +550,6 @@ namespace XmlApp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FonDekontDekontNo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -768,6 +772,10 @@ namespace XmlApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("XmlApp.Models.Fields.FonDekont", "FonDekont")
+                        .WithMany()
+                        .HasForeignKey("FonDekontDekontNo");
+
                     b.HasOne("XmlApp.Models.Fields.GenelBilgiler", "GenelBilgiler")
                         .WithMany()
                         .HasForeignKey("GenelBilgilerId")
@@ -782,9 +790,7 @@ namespace XmlApp.Migrations
 
                     b.HasOne("XmlApp.Models.Fields.SbifBilgiFisi", "SbifBilgiFisi")
                         .WithMany()
-                        .HasForeignKey("SbifBilgiFisiId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SbifBilgiFisiId");
 
                     b.HasOne("XmlApp.Models.Fields.SbifGumrukBilgileri", "SbifGumrukBilgileri")
                         .WithMany()
@@ -797,6 +803,8 @@ namespace XmlApp.Migrations
                         .IsRequired();
 
                     b.Navigation("FaturaBilgileri");
+
+                    b.Navigation("FonDekont");
 
                     b.Navigation("GenelBilgiler");
 
@@ -813,9 +821,7 @@ namespace XmlApp.Migrations
                 {
                     b.HasOne("XmlApp.Models.Fields.FonDekont", "FonDekont")
                         .WithMany()
-                        .HasForeignKey("FonDekontDekontNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FonDekontDekontNo");
 
                     b.Navigation("FonDekont");
                 });

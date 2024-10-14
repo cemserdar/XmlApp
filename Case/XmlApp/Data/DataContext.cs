@@ -27,9 +27,7 @@ namespace XmlApp.Data
         public DbSet<GumrukMudurluguOnayi> gumrukMudurluguOnayi { get; set; }
         public DbSet<GumrukMuhafazaMudurluguOnayi> gumrukMuhafazaMudurluguOnayi { get; set; }
         public DbSet<SbifGumrukBilgileri> sbifGumrukBilgileri { get; set; }
-
-
-
+        public DbSet<FonDekont> FonDekont { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -51,8 +49,6 @@ namespace XmlApp.Data
 
             modelBuilder.Entity<SBIFBilgileri>()
                .HasOne(s => s.SbifGumrukBilgileri);
-
-
 
             modelBuilder.Entity<KarsiFirmaBilgisi>(entity =>
             {
@@ -76,6 +72,8 @@ namespace XmlApp.Data
                     .HasOne(s => s.SbifGumrukBilgileri)
                     .WithMany()
                     .HasForeignKey(s => s.SbifGumrukBilgileriId);
+
+
         }
     }
 }

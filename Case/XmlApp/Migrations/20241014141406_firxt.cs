@@ -5,28 +5,11 @@
 namespace XmlApp.Migrations
 {
     /// <inheritdoc />
-    public partial class fiii : Migration
+    public partial class firxt : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "FonDekont",
-                columns: table => new
-                {
-                    FonDekontDekontNo = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FonDekontTarih = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FonDekontTutar = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    FonDekontTutarPB = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FonDekontKullanilan = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    FonDekontKullanilanPB = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FonDekontKullanilanDolar = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FonDekont", x => x.FonDekontDekontNo);
-                });
-
             migrationBuilder.CreateTable(
                 name: "gumrukMudurluguOnayi",
                 columns: table => new
@@ -190,25 +173,6 @@ namespace XmlApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TeslimAdresi", x => x.AdiTicaretUnvani);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SbifBilgiFisi",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FonDekontDekontNo = table.Column<string>(type: "nvarchar(450)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SbifBilgiFisi", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SbifBilgiFisi_FonDekont_FonDekontDekontNo",
-                        column: x => x.FonDekontDekontNo,
-                        principalTable: "FonDekont",
-                        principalColumn: "FonDekontDekontNo",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -379,17 +343,53 @@ namespace XmlApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "FonDekont",
+                columns: table => new
+                {
+                    FonDekontDekontNo = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FonDekontTarih = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FonDekontTutar = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    FonDekontTutarPB = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FonDekontKullanilan = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    FonDekontKullanilanPB = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FonDekontKullanilanDolar = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SBIFBilgileriId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FonDekont", x => x.FonDekontDekontNo);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SbifBilgiFisi",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FonDekontDekontNo = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SbifBilgiFisi", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SbifBilgiFisi_FonDekont_FonDekontDekontNo",
+                        column: x => x.FonDekontDekontNo,
+                        principalTable: "FonDekont",
+                        principalColumn: "FonDekontDekontNo");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "SBIFBilgileri",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    SbifGumrukBilgileriId = table.Column<int>(type: "int", nullable: true),
                     GenelBilgilerId = table.Column<int>(type: "int", nullable: false),
                     FaturaBilgileriId = table.Column<int>(type: "int", nullable: false),
                     MalKalemBilgileriId = table.Column<int>(type: "int", nullable: false),
                     TalepEdilenIsleticiHizmetleriId = table.Column<int>(type: "int", nullable: false),
-                    SbifBilgiFisiId = table.Column<int>(type: "int", nullable: false),
-                    SbifGumrukBilgileriId = table.Column<int>(type: "int", nullable: false)
+                    SbifBilgiFisiId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -416,8 +416,7 @@ namespace XmlApp.Migrations
                         name: "FK_SBIFBilgileri_SbifBilgiFisi_SbifBilgiFisiId",
                         column: x => x.SbifBilgiFisiId,
                         principalTable: "SbifBilgiFisi",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_SBIFBilgileri_TalepEdilenIsleticiHizmetleri_TalepEdilenIsleticiHizmetleriId",
                         column: x => x.TalepEdilenIsleticiHizmetleriId,
@@ -428,8 +427,7 @@ namespace XmlApp.Migrations
                         name: "FK_SBIFBilgileri_sbifGumrukBilgileri_SbifGumrukBilgileriId",
                         column: x => x.SbifGumrukBilgileriId,
                         principalTable: "sbifGumrukBilgileri",
-                        principalColumn: "SbifGumrukBilgileriId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "SbifGumrukBilgileriId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -446,6 +444,13 @@ namespace XmlApp.Migrations
                 name: "IX_Faturalar_TeslimAdresiAdiTicaretUnvani",
                 table: "Faturalar",
                 column: "TeslimAdresiAdiTicaretUnvani");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FonDekont_SBIFBilgileriId",
+                table: "FonDekont",
+                column: "SBIFBilgileriId",
+                unique: true,
+                filter: "[SBIFBilgileriId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_GenelBilgiler_IslemKonusuBilgileriId",
@@ -516,13 +521,37 @@ namespace XmlApp.Migrations
                 name: "IX_sbifGumrukBilgileri_GumrukMuhafazaMudurluguOnayiId",
                 table: "sbifGumrukBilgileri",
                 column: "GumrukMuhafazaMudurluguOnayiId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_FonDekont_SBIFBilgileri_SBIFBilgileriId",
+                table: "FonDekont",
+                column: "SBIFBilgileriId",
+                principalTable: "SBIFBilgileri",
+                principalColumn: "Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_FaturaBilgileri_Faturalar_FaturaNo",
+                table: "FaturaBilgileri");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_FonDekont_SBIFBilgileri_SBIFBilgileriId",
+                table: "FonDekont");
+
             migrationBuilder.DropTable(
                 name: "MalKalemler");
+
+            migrationBuilder.DropTable(
+                name: "Faturalar");
+
+            migrationBuilder.DropTable(
+                name: "KarsiFirmaBilgileri");
+
+            migrationBuilder.DropTable(
+                name: "TeslimAdresi");
 
             migrationBuilder.DropTable(
                 name: "SBIFBilgileri");
@@ -546,9 +575,6 @@ namespace XmlApp.Migrations
                 name: "sbifGumrukBilgileri");
 
             migrationBuilder.DropTable(
-                name: "Faturalar");
-
-            migrationBuilder.DropTable(
                 name: "IslemKonusuBilgileri");
 
             migrationBuilder.DropTable(
@@ -568,12 +594,6 @@ namespace XmlApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "gumrukMuhafazaMudurluguOnayi");
-
-            migrationBuilder.DropTable(
-                name: "KarsiFirmaBilgileri");
-
-            migrationBuilder.DropTable(
-                name: "TeslimAdresi");
         }
     }
 }
